@@ -10,9 +10,4 @@ class Schedule extends Model
     use HasFactory;
 
     protected $fillable = [ 'grade', 'parallel'];
-
-    public function items()
-    {
-        return $this->hasMany(ScheduleItem::class, 'schedule_id');
-    }
 }

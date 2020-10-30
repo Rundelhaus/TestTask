@@ -83,9 +83,9 @@ class ScheduleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Schedule $schedule)
     {
-        $mark->delete();
+        $schedule->delete();
         return response('Mark successfully deleted', 200);
     }
 }

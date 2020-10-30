@@ -96,15 +96,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|object
      */
-    public function update(UpdateUserRequest $request, $id)
+    public function update(UpdateUserRequest $request, User $user)
     {
         $validator = $request->validated();
 
         if ($validator->fails()) {
             return response($validator->messages(), 200);
         }
-
-        $user = User::find($id);
 
         $user->update([
             'name' => $request->name,

@@ -42,19 +42,4 @@ class User extends Authenticatable
     protected $casts = [
         //
     ];
-
-    public function teacher()
-    {
-        return $this->hasOne(Teacher::class, 'user_id');
-    }
-
-    public function student()
-    {
-        return $this->hasOne(Student::class, 'user_id');
-    }
-
-    public function school()
-    {
-        return $this->belongsTo(School::class, 'school_id');
-    }
 }
